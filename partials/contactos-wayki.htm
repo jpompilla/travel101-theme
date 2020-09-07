@@ -35,6 +35,9 @@
                         {% if this.theme.whatsapp_1 %}
                         <li class="list-group-item"><i class="fas fa-phone-alt"></i> Telefono: <a href="tel:{{this.theme.whatsapp_1}}">(+{{this.theme.whatsapp_1|slice(1,2)}}) {{this.theme.whatsapp_1|slice(3,3)}}-{{this.theme.whatsapp_1|slice(6,6)}}</a></li>
                         {% endif %}
+                        {% if this.theme.whatsapp_2 %}
+                        <li class="list-group-item"><i class="fas fa-phone-alt"></i> Telefono: <a href="tel:{{this.theme.whatsapp_2}}">(+{{this.theme.whatsapp_2|slice(1,2)}}) {{this.theme.whatsapp_2|slice(3,3)}}-{{this.theme.whatsapp_2|slice(6,6)}}</a></li>
+                        {% endif %}
                         {% if this.theme.email_1 %}
                         <li class="list-group-item"><i class="far fa-envelope"></i> Correo Electronico: <a href="mailto:{{this.theme.email_1}}">{{this.theme.email_1}}</a></li>
                         {% endif %}

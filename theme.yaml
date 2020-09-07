@@ -27,6 +27,8 @@ form:
             label: Correo electronico principal
         whatsapp_1:
             label: Whatsapp principal
+        whatsapp_2:
+            label: Whatsapp secundario
         facebook_1:
             label: Facebook principal
         instagram_1:
