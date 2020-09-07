@@ -1,0 +1,71 @@
+[viewBag]
+snippetCode = "tours-wayki"
+snippetName = "Tours wayki"
+==
+<?php
+use Itegracion\iTravel\Models\Tour;
+
+function onStart(){
+    $this['tours'] = Tour::where('enable','1')->get();
+    
+}
+?>
+==
+{% put styles%}
+    <style>
+    .catalog .card-price{
+        position: absolute;
+        top: 180px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+        background: {{this.theme.bg_cta2}};
+        padding: 10px;
+    }
+    .catalog a{
+        color:#666;
+    }
+    .catalog a:hover{
+        text-decoration: none;
+    }
+    .catalog .card-title{
+        font-size: 22px;
+    }
+    .catalog .card-subtitle, .catalog .card-duration{
+        font-size: 14px;
+    }
+    .catalog a:hover .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .catalog a:hover .card .card-price {
+        top: 178px;
+        padding-left: 22px;
+    }
+
+    </style>
+{% endput%}
+<section class="catalog mb-5">
+    <div class="container">
+        <div class="row">
+            {% for tour in tours %}                
+            <div class="col-sm-4 mt-5">
+                <!--a href="{{''|page({slug: tour.slug})}}"-->
+                <a href="{{'tour'|page({category: tour.category.slug, slug: tour.slug})}}">
+                    <div class="card">
+                        <img src="{{tour.poster.thumb(400,280,'crop')}}" class="card-img-top" alt="{{tour.title}}">
+                        <div class="card-price">Desde {{tour.price}}/persona</div>
+                        <div class="card-body">
+                            <h3 class="card-title">{{tour.title}}</h3>
+                            <div class="card-subtitle">{{tour.activities}}</div>
+                            <div class="card-duration">
+                                <i class="fas fa-clock"></i> {{tour.duration}}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

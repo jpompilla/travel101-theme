@@ -1,0 +1,26 @@
+title = "tour"
+url = "/:category/:slug"
+layout = "site"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+enabled_in_sitemap = 1
+use_updated_at = 1
+changefreq = "always"
+priority = 0.1
+==
+<?php
+use Itegracion\iTravel\Models\Tour;
+
+function onStart(){
+    $this['tour'] = Tour::where('slug',$this->param('slug'))->first();
+}
+?>
+==
+{% partial 'menu-trilogia'%}
+{% partial 'tour-header-trilogia'%}
+{% partial 'tour-variables-wayki'%}
+{% partial 'tour-content-wayki'%}
+{% partial 'tour-relateds-wayki'%}
+{% partial 'contactos-wayki'%}
+{% partial 'footer-wayki'%}

@@ -1,0 +1,15 @@
+[viewBag]
+==
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="{{'logo.png'|media|resize(150)}}" alt="Logo" loading="lazy">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            {% partial 'menu-items' items=staticMenu.menuItems %}
+        </div>
+    </div>
+</nav>

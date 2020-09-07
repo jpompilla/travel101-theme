@@ -1,0 +1,60 @@
+[viewBag]
+==
+{% put styles%}
+    <style>
+        .contacts{
+            background-color: {{this.theme.bg_color1}};
+        }
+        .contacts .list-group-item{
+            background-color:transparent;
+            border:none;
+            border-bottom: 1px solid rgba(0,0,0,.125);
+        }
+    </style>
+{% endput%}
+
+<section class="contacts pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="contact-banner">
+                    <h4 class="banner-title">Contactos</h4>
+                    <ul class="list-group">
+                        {% if this.theme.razon_social %}
+                        <li class="list-group-item">{{this.theme.razon_social}}</li>
+                        {% endif %}
+                        {% if this.theme.ruc %}
+                        <li class="list-group-item">RUC: {{this.theme.ruc}}</li>
+                        {% endif %}
+                        {% if this.theme.direccion_1 %}
+                        <li class="list-group-item">{{this.theme.direccion_1}}</li>
+                        {% endif %}
+                        {% if this.theme.ciudad %}
+                        <li class="list-group-item">{{this.theme.ciudad}}</li>
+                        {% endif %}
+                        {% if this.theme.whatsapp_1 %}
+                        <li class="list-group-item"><i class="fas fa-phone-alt"></i> Telefono: <a href="tel:{{this.theme.whatsapp_1}}">(+{{this.theme.whatsapp_1|slice(1,2)}}) {{this.theme.whatsapp_1|slice(3,3)}}-{{this.theme.whatsapp_1|slice(6,6)}}</a></li>
+                        {% endif %}
+                        {% if this.theme.email_1 %}
+                        <li class="list-group-item"><i class="far fa-envelope"></i> Correo Electronico: <a href="mailto:{{this.theme.email_1}}">{{this.theme.email_1}}</a></li>
+                        {% endif %}
+                        {% if this.theme.facebook_1 %}
+                        <li class="list-group-item"><i class="fab fa-facebook-square"></i> Facebook: <a href="https://fb.me/{{this.theme.facebook_1}}">{{this.theme.facebook_1}} </a></li>
+                        {% endif %}
+                        {% if this.theme.instagram_1 %}
+                        <li class="list-group-item"><i class="fab fa-instagram-square"></i> Instagram: <a href="https://instagram.com/{{this.theme.instagram_1}}">{{this.theme.instagram_1}}</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="embed-responsive embed-responsive-4by3 shadow">
+                    <iframe 
+                        class="embed-responsive-item" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.2565923520087!2d-71.98024388517206!3d-13.519838590497908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd75eb17b18d5%3A0x897beda876b26e7f!2sGolden%20Wayki%20Tour%20Operador!5e0!3m2!1ses!2spe!4v1597192109344!5m2!1ses!2spe" 
+                        allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,40 @@
+[viewBag]
+==
+<?php
+use Itegracion\iTravel\Models\Destination;
+
+function onStart(){
+    $this['destinations'] = Destination::where('enable','1')->get();
+}
+?>
+==
+{% put styles%}
+    <style>
+    .otros{
+        background-color:{{this.theme.bg_color1}};
+    }
+    </style>
+{% endput %}
+<section class="tour-content pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Descripción</h2>
+                <p>{{tour.description}}</p>
+                <br>
+                <br>
+                {{tour.content|raw}}
+            </div>
+            <div class="col-md-4">
+                <div class="otros p-3">
+                    <h4>Otros destinos</h4>
+                    <ul>
+                    {%for destination in destinations%}
+                        <li><a href="/destinos/{{destination.slug}}">{{destination.title}}</a></li>
+                    {%endfor%}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

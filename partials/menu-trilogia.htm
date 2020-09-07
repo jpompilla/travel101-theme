@@ -1,0 +1,97 @@
+[viewBag]
+
+[staticMenu]
+code = "menu-principal"
+==
+{% put styles%}
+    <meta name="theme-color" content="{{this.theme.bg_app}}">
+    <style>
+    .menu .navbar{
+        padding-top:0;
+        padding-bottom:0;
+    }
+    .menu .navbar .nav-item{
+        padding:0.7rem;
+    }
+    .menu .navbar .active{
+        background-color:#d6dde0;
+    }
+    .menu .navbar-top {
+        background-color:{{this.theme.bg_app}};
+    }
+    .menu .navbar-top a{
+        color:#fff;
+        font-size:14px;
+    }
+    .menu .action{
+        background-color:{{this.theme.bg_cta1}};
+        color:#fff;
+    }
+    @media (max-width: 480px) {
+        .menu .navbar{
+            padding:.5rem 1rem;
+        }
+    }
+    </style>
+{% endput%}
+
+<section class="menu fixed-top shadow">
+    <div class="navbar-top">
+        <div class="container">
+            <ul class="nav justify-content-center">                
+                {% if this.theme.whatsapp_1 %}
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://wa.me/{{this.theme.whatsapp_1}}"><i class="fab fa-whatsapp"></i> {{this.theme.whatsapp_1|slice(3,9)}}</a>
+                </li>
+                {% endif %}
+                {% if this.theme.email_1 %}
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="mailto:{{this.theme.email_1}}"><i class="far fa-envelope"></i> <span class="d-none d-md-inline">{{this.theme.email_1}}</span></a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:{{this.theme.bg_color1}}">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{{this.theme.logo|resize(150)}}" alt="Logo" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto {{ class }}">
+                    {% set items=staticMenu.menuItems %}
+                    {% for item in items %}
+                    {% if not item.items %}
+                        <li class="nav-item {{ item.isActive ? 'active' : '' }}">
+                            <a class="nav-link" href="{{ item.url }}">{{ item.title }} {%if item.isActive%}<span class="sr-only">(current)</span>{%endif%}</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" 
+                                href="{{item.url}}" id="nav{{loop.index}}" 
+                                role="button" 
+                                data-toggle="dropdown" 
+                                aria-haspopup="true" 
+                                aria-expanded="false">
+                            {{item.title}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="nav{{loop.index}}">
+                                {% for subitem in item.items %}
+                                <a class="dropdown-item" href="{{subitem.url}}">{{subitem.title}}</a>
+                                {% endfor %}                
+                            </div>
+                        </li>
+                    {% endif %}
+                    {% endfor %}
+                    
+                    <li class="nav-item">
+                        <a class="btn action" target="_blank" href="https://m.me/{{this.theme.facebook_1}}"><i class="fab fa-facebook-messenger"></i> Contactar ahora</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>

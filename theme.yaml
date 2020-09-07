@@ -1,0 +1,41 @@
+name: Travel101
+description: 'Plantilla power, diseñado por Itegracion Digital'
+author: Itegracion
+homepage: 'https://itegracion.digital'
+code: travel101
+form:
+    fields:
+        logo:
+            label: Logo principal
+            type: fileupload
+            mode: image
+        bg_app:
+            label: Color de la App
+            type: colorpicker
+        bg_filter1:
+            label: Color de filtro 1 
+        bg_color1:
+            label: Color de fondo 1
+            type: colorpicker
+        bg_cta1:
+            label: Color de llamada a la accion 1
+            type: colorpicker
+        bg_cta2:
+            label: Color de llamada a la accion 2
+            type: colorpicker
+        email_1:
+            label: Correo electronico principal
+        whatsapp_1:
+            label: Whatsapp principal
+        facebook_1:
+            label: Facebook principal
+        instagram_1:
+            label: Instagram principal
+        razon_social:
+            label: Razón Social
+        ruc:
+            label: Nro RUC
+        direccion_1:
+            label: Dirección principal
+        ciudad:
+            label: Ciudad, departamento y pais

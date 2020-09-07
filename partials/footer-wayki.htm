@@ -1,0 +1,58 @@
+[viewBag]
+
+[staticMenu]
+code = "menu-footer"
+==
+{% put styles%}
+    <style>
+        .footer{
+            background-color: {{this.theme.bg_app}};
+        }
+        .footer a{
+            color: #fff;
+        }
+        .footer .footer-top{
+
+        }
+        .footer .footer-bottom{
+            font-size:12px;
+        }
+    </style>
+{% endput%}
+<footer class="footer">
+    <div class="container">
+        <div class="row footer-top">
+            <div class="col-md-6">
+                <ul class="nav d-flex flex-md-row flex-column">
+                    {% for item in staticMenu.menuItems %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{item.url}}">{{item.title}}</a>
+                    </li>
+                    {% endfor%}
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="nav justify-content-md-end">
+                    {% if this.theme.facebook_1 %}
+                    <li class="nav-item"><a class="nav-link" target="_blank" href="https://fb.me/{{this.theme.facebook_1}}"><i class="fab fa-facebook-square"></i></a></li>
+                    {%endif%}
+                    {% if this.theme.instagram_1 %}
+                    <li class="nav-item"><a class="nav-link" target="_blank" href="https://instagram.com/{{this.theme.instagram_1}}"><i class="fab fa-instagram-square"></i></a></li>
+                    {%endif%}
+                    {% if this.theme.email_1 %}
+                    <li class="nav-item"><a class="nav-link" target="_blank" href="mailto:{{this.theme.email_1}}"><i class="far fa-envelope"></i></a></li>
+                    {%endif%}
+                </ul>
+            </div>
+        </div>
+        <div class="row footer-bottom">
+            <div class="col-md-12">
+                <ul class="nav justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://itegracion.digital">Pagina web y Redes Sociales por Itegracion Digital</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>        
+</footer>

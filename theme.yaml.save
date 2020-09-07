@@ -1,0 +1,10 @@
+name: goldenwayki.com
+description: 'Plantilla power para Golden Wayki, diseñado por Itegracion Digital'
+author: Itegracion
+homepage: 'https://itegracion.digital'
+code: goldenwayki
+form:
+	fields:
+		site_name:
+			label:Nombre del sitio
+						

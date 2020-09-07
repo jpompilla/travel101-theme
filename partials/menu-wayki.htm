@@ -1,0 +1,61 @@
+[viewBag]
+snippetCode = "menu-wayki"
+snippetName = "Menu Wayki"
+
+[staticMenu]
+code = "menu-principal"
+==
+<?php
+use Itegracion\iTravel\Models\Category;
+use Itegracion\iTravel\Models\Destination;
+
+function onStart(){
+    $this['categories'] = Category::where('enable','1')->get();
+    $this['destinations'] = Category::where('enable','1')->get();
+}
+?>
+==
+{% put styles%}
+    <meta name="theme-color" content="{{this.theme.bg_app}}">
+    <style>
+    .navbar-top {
+        background-color:{{this.theme.bg_app}};
+    }
+    .navbar-top a{
+        color:#fff;
+        font-size:14px;
+    }
+    </style>
+{% endput%}
+
+<section class="menu fixed-top shadow">
+    <div class="navbar-top">
+        <div class="container">
+            <ul class="nav justify-content-center">
+                {% if this.theme.email_1 %}
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="mailto:{{this.theme.email_1}}"><i class="far fa-envelope"></i> {{this.theme.email_1}}</a>
+                </li>
+                {% endif %}
+                {% if this.theme.whatsapp_1 %}
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://wa.me/{{this.theme.whatsapp_1}}"><i class="fab fa-whatsapp"></i> {{this.theme.whatsapp_1|slice(3,9)}}</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:{{this.theme.bg_color1}}">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{{this.theme.logo|resize(150)}}" alt="Logo" loading="lazy">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                {% partial 'menu-items' items=staticMenu.menuItems %}
+            </div>
+        </div>
+    </nav>
+</section>

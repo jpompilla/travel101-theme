@@ -1,0 +1,70 @@
+[viewBag]
+==
+{% put styles%}
+    <style>
+    .relateds .card-price{
+        position: absolute;
+        top: 180px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+        background: {{this.theme.bg_cta2}};
+        padding: 10px;
+    }
+    .relateds a{
+        color:#666;
+    }
+    .relateds a:hover{
+        text-decoration: none;
+    }
+    .relateds .card-title{
+        font-size: 22px;
+    }
+    .relateds .card-subtitle, .relateds .card-duration{
+        font-size: 14px;
+    }
+    .relateds a:hover .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .relateds a:hover .card .card-price {
+        top: 178px;
+        padding-left: 22px;
+    }
+    
+    .section-header h2{
+        font-family: 'Poiret One', cursive;
+        font-weight:bold;
+        text-shadow: 2px 2px 2px #999;
+    }
+    </style>
+{% endput%}
+<section class="relateds mt-5 mb-5">
+    <div class="container">
+        <div class="section-header text-center">
+            {% if tour.similaries.count > 0 %}
+            <h2>Tour relacionados</h2>
+            {% endif%}
+        </div>
+        <div class="row">
+            {% for related in tour.similaries %}                
+            <div class="col-sm-4 mt-5">
+                <!--a href="{{''|page({slug: related.slug})}}"-->
+                <a href="{{'tour'|page({category: related.category.slug, slug: related.slug})}}">
+                    <div class="card">
+                        <img src="{{related.poster.thumb(400,280,'crop')}}" class="card-img-top" alt="{{related.title}}">
+                        <div class="card-price">Desde {{related.price}}/persona</div>
+                        <div class="card-body">
+                            <h3 class="card-title">{{related.title}}</h3>
+                            <div class="card-subtitle">{{related.activities}}</div>
+                            <div class="card-duration">
+                                <i class="fas fa-clock"></i> {{related.duration}}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

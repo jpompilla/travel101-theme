@@ -1,0 +1,51 @@
+name: menu-principal
+items:
+    -
+        title: Inicio
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: home
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Nosotros
+        nesting: '1'
+        type: static-page
+        url: ''
+        code: ''
+        reference: nosotros
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Que hacer'
+        nesting: ''
+        type: all-travel-categories
+        url: ''
+        code: ''
+        reference: ''
+        cmsPage: tour-categories
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Que visitar'
+        type: all-travel-destinations
+        code: ''
+        cmsPage: tour-destinations
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

@@ -1,0 +1,71 @@
+[viewBag]
+==
+{% put styles%}
+    <style>
+    .tour-variables{
+        background-color:{{this.theme.bg_color1}};
+        color:#666;
+    }
+    .tour-variables i{
+        font-size:35px;
+    }
+    .tour-variables .variable{
+        position:absolute;
+        top:-5px;
+        left:70px;
+    }
+    .tour-variables .variable-label{
+        color:#999;
+        font-size:12px;
+    }
+    .tour-variables .variable-value{
+        font-weight:bold;
+    }
+    .tour-variables .col-md-2{
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+    
+    </style>
+{% endput %}
+<section class="tour-variables">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-2">
+                <i class="fas fa-clock"></i> 
+                <div class="variable">
+                    <div class="variable-label">Duración</div>
+                    <div class="variable-value">{{tour.duration}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <i class="fas fa-hiking"></i> 
+                <div class="variable">
+                    <div class="variable-label">Actividades</div>
+                    <div class="variable-value">{{tour.activities}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <i class="fas fa-mountain"></i> 
+                <div class="variable">
+                    <div class="variable-label">Altitud</div>
+                    <div class="variable-value">{{tour.altitude}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <i class="fas fa-bed"></i> 
+                <div class="variable">
+                    <div class="variable-label">Acomodación</div>
+                    <div class="variable-value">{{tour.acomodation}}</div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <i class="fas fa-money-bill-wave"></i> 
+                <div class="variable">
+                    <div class="variable-label">Precio</div>
+                    <div class="variable-value">Desde {{tour.price}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
