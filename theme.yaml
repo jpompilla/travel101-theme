@@ -41,3 +41,5 @@ form:
             label: Dirección principal
         ciudad:
             label: Ciudad, departamento y pais
+        map_url:
+            label: URL del Google Maps
