@@ -1,18 +1,35 @@
 items:
     -
         title: Inicio
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: home
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: Nosotros
-        type: url
-        url: '#'
+        title: 'Términos y condiciones'
+        nesting: '0'
+        type: static-page
         code: ''
+        reference: nosotros-terminos-y-condiciones
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Política de privacidad'
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: nosotros-politica-de-privacidad
+        replace: '0'
         viewBag:
             isHidden: '0'
             cssClass: ''

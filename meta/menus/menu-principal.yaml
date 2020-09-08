@@ -14,18 +14,69 @@ items:
             cssClass: ''
             isExternal: '0'
     -
-        title: Nosotros
-        nesting: '1'
-        type: static-page
-        url: ''
+        title: 'Quienes Somos'
+        nesting: ''
+        type: url
+        url: '#'
         code: ''
-        reference: nosotros
+        reference: ''
         cmsPage: ''
-        replace: '0'
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+        items:
+            -
+                title: Nosotros
+                nesting: '0'
+                type: static-page
+                url: ''
+                code: ''
+                reference: nosotros
+                cmsPage: ''
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Métodos de pago'
+                nesting: '0'
+                type: static-page
+                url: ''
+                code: ''
+                reference: nosotros-metodos-de-pago
+                cmsPage: ''
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Términos y condiciones'
+                nesting: '0'
+                type: static-page
+                url: ''
+                code: ''
+                reference: nosotros-terminos-y-condiciones
+                cmsPage: ''
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Política de privacidad'
+                nesting: '0'
+                type: static-page
+                code: ''
+                reference: nosotros-politica-de-privacidad
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: 'Que hacer'
         nesting: ''
@@ -41,8 +92,11 @@ items:
             isExternal: '0'
     -
         title: 'Que visitar'
+        nesting: ''
         type: all-travel-destinations
+        url: ''
         code: ''
+        reference: ''
         cmsPage: tour-destinations
         replace: '0'
         viewBag:

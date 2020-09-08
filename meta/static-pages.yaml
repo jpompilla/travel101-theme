@@ -1,3 +1,5 @@
 static-pages:
     nosotros:
+        nosotros-metodos-de-pago: {  }
         nosotros-terminos-y-condiciones: {  }
+        nosotros-politica-de-privacidad: {  }
