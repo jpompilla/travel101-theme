@@ -33,6 +33,8 @@ form:
             label: Facebook principal
         instagram_1:
             label: Instagram principal
+        tripadvisor_1:
+            label: TripAdvisor principal
         razon_social:
             label: Razón Social
         ruc:

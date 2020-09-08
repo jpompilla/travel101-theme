@@ -37,10 +37,16 @@ code = "menu-footer"
                     <li class="nav-item"><a class="nav-link" target="_blank" href="https://fb.me/{{this.theme.facebook_1}}"><i class="fab fa-facebook-square"></i></a></li>
                     {%endif%}
                     {% if this.theme.instagram_1 %}
-                    <li class="nav-item"><a class="nav-link" target="_blank" href="https://instagram.com/{{this.theme.instagram_1}}"><i class="fab fa-instagram-square"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" target="_blank" href="https://instagram.com/{{this.theme.instagram_1}}"><i class="fab fa-instagram"></i></a></li>
+                    {%endif%}
+                    {% if this.theme.whatsapp_1 %}
+                    <li class="nav-item"><a class="nav-link" target="_blank" href="https://wa.me/{{this.theme.whatsapp_1}}"><i class="fab fa-whatsapp"></i></a></li>
                     {%endif%}
                     {% if this.theme.email_1 %}
                     <li class="nav-item"><a class="nav-link" target="_blank" href="mailto:{{this.theme.email_1}}"><i class="far fa-envelope"></i></a></li>
+                    {%endif%}
+                    {% if this.theme.tripadvisor_1 %}
+                    <li class="nav-item"><a class="nav-link" target="_blank" href="{{this.theme.tripadvisor_1}}"><i class="fab fa-tripadvisor"></i></a></li>
                     {%endif%}
                 </ul>
             </div>
